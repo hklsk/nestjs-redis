@@ -6,6 +6,7 @@ import {
   OnModuleDestroy,
 } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
+import { ConfigModule } from '@nestjs/config';
 import { RedisModuleAsyncOptions, RedisModuleOptions } from './redis.interface';
 import {
   createAsyncClientOptions,
@@ -20,6 +21,7 @@ import { RedisService } from './redis.service';
 @Module({
   providers: [RedisService],
   exports: [RedisService],
+  imports: [ConfigModule],
 })
 export class RedisCoreModule implements OnModuleDestroy {
   constructor(

@@ -15,7 +15,7 @@ async function getClient(options) {
     }
     return client;
 }
-exports.createClient = () => ({
+const createClient = () => ({
     provide: redis_constants_1.REDIS_CLIENT,
     useFactory: async (options) => {
         const clients = new Map();
@@ -43,8 +43,10 @@ exports.createClient = () => ({
     },
     inject: [redis_constants_1.REDIS_MODULE_OPTIONS],
 });
-exports.createAsyncClientOptions = (options) => ({
+exports.createClient = createClient;
+const createAsyncClientOptions = (options) => ({
     provide: redis_constants_1.REDIS_MODULE_OPTIONS,
     useFactory: options.useFactory,
     inject: options.inject,
 });
+exports.createAsyncClientOptions = createAsyncClientOptions;

@@ -1,6 +1,6 @@
 {
   "name": "nestjs-redis",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "a NestJS ioRedis module",
   "author": "skunight",
   "license": "MIT",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^7.4.4",
+    "@nestjs/config": "^1.0.0",
     "@nestjs/core": "^7.4.4",
     "@types/ioredis": "*",
     "@types/uuid": "*",
@@ -43,7 +44,7 @@
     "prettier": "^2",
     "rimraf": "*",
     "ts-jest": "^26",
-    "typescript": "^4"
+    "typescript": "^4.3.5"
   },
   "keywords": [
     "nestjs",
